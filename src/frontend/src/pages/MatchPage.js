@@ -1,6 +1,5 @@
 import { React, useEffect, useState } from "react";
 import MatchDetailCard from "../components/MatchDetailCard";
-import MatchSmallCard from "../components/MatchSmallCard";
 import {useParams } from 'react-router-dom';
 import { YearSelector } from '../components/YearSelector';
 
@@ -17,7 +16,6 @@ export const MatchPage = () => {
       );
      
       const data = await response.json();
-      console.log("data ",data);
       setMatches(data);
     };
     fetchMatches();

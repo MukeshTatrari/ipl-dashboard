@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import "./MatchSmallCard.scss";
 
 class MatchSmallCard extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     const {teamName, match} = this.props;
     if (!match) return null;
