@@ -27,13 +27,13 @@ public class TeamController {
         return teamService.getTeam(teamName);
     }
 
-    @GetMapping("/team/{teamName}/matches/{year}")
+    @GetMapping("/team/{teamName}/matches")
     public List<Match> getMatchesForTeam(@PathVariable String teamName, @RequestParam int year){
         
         LocalDate startDate = LocalDate.of( year , 1, 1);
         LocalDate endDate  = LocalDate.of( year+1 , 1, 1);
 
-        return teamService.getMatches(teamName, startDate, endDate);
+        return teamService.getMatchesByTeamBetweenDates(teamName, startDate, endDate);
     }
     
 }

@@ -27,7 +27,10 @@ public class TeamService {
     }
 
     public List<Match> getMatches(String teamName,LocalDate date1, LocalDate date2){
-        return matchRepository.getByTeam1OrTeam2AndDateBetweenOrderByDateDesc(teamName, teamName, date1, date2);
+        return matchRepository.getByTeam1AndDateBetweenOrTeam2AndDateBetweenOrderByDateDesc(teamName, date1, date2,teamName, date1, date2);
     }
 
+    public List<Match> getMatchesByTeamBetweenDates(String teamName,LocalDate dateStart, LocalDate dateEnd){
+        return matchRepository.getMatchesByTeamBetweenDates(teamName, dateStart, dateEnd);
+    }
 }
