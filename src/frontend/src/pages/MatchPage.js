@@ -21,7 +21,7 @@ export const MatchPage = () => {
       setMatches(data);
     };
     fetchMatches();
-  },[]);
+  },[teamName,year]);
   return (
     <div className="MatchPage">
     <div className="year-selector">

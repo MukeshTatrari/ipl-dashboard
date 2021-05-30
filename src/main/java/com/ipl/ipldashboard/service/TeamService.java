@@ -33,4 +33,8 @@ public class TeamService {
     public List<Match> getMatchesByTeamBetweenDates(String teamName,LocalDate dateStart, LocalDate dateEnd){
         return matchRepository.getMatchesByTeamBetweenDates(teamName, dateStart, dateEnd);
     }
+
+    public Iterable<Team> getTeams(){
+        return teamRepository.findAll();
+    }
 }
